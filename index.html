@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>CSS Scroll Animations</title>
+      <link rel="stylesheet" href="scroll-animation.css">
+</head>
+
+<body>
+      <div class="scroll-container">
+            <section class="box">Scroll Down</section>
+            <section class="box scroll-animate gradient-box">Stunning Animations</section>
+            <section class="box scroll-animate gradient-box">Beautiful Designs</section>
+            <section class="box scroll-animate gradient-box">Sleek Transitions</section>
+            <section class="box">End of Scroll</section>
+      </div>
+      <script>
+            window.addEventListener('scroll', () => {
+                  document.querySelectorAll('.scroll-animate').forEach((element) => {
+                        const position = element.getBoundingClientRect().top;
+                        const windowHeight = window.innerHeight;
+                        if (position < windowHeight - 100) {
+                              element.classList.add('scroll-active');
+                        }
+                  });
+            });
+
+      </script>
+</body>
+
+</html>
